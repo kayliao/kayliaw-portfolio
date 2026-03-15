@@ -27,7 +27,7 @@ export const translations = {
   zh: {
     home: {
       title: "軟體工程師 · 機器學習 · 自動化",
-      description: "剛從新加坡畢業的全端工程師，具備前端與高流量後端系統開發經驗。正在學習 AI 模型，並嘗試將其應用於實務專案中，專注於打造穩定且可擴展的端到端解決方案。。",
+      description: "剛從新加坡畢業的全端工程師，具備前端與高流量後端系統開發經驗。正在學習 AI 模型，並嘗試將其應用於實務專案中，專注於打造穩定且可擴展的端到端解決方案。",
       tech: ["C#", "React", "TypeScript", "Python", "Pytorch", "MS SQL", "RabbitMQ", "Docker", "GCP", "AWS"]
     },
     nav: {

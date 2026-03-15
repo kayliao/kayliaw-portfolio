@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/i18n";
-import { withBasePath } from "@/lib/path";
+
 
 type ResumeFilesMap = Record<string, { label: string; href: string }[]>;
 
@@ -22,7 +22,7 @@ export default function DownloadPDFButton() {
   const t = translations[lang];
   const currentFiles = (resumeFilesBase[lang] ?? resumeFilesBase.en).map((file) => ({
     ...file,
-    href: withBasePath(file.href),
+    href: file.href,
   }));
 
   const [selectedFile, setSelectedFile] = useState(currentFiles[0]?.href ?? "");

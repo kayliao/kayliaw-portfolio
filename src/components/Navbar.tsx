@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/i18n";
+import { withBasePath } from "@/lib/path";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
@@ -26,11 +27,11 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://github.com/kayliao?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-900 transition hover:scale-110">
-            <img src="navbar/github.png" className="w-5 h-5" alt="GitHub" />
+          <a href={withBasePath("https://github.com/kayliao?tab=repositories")} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-900 transition hover:scale-110">
+            <img src={withBasePath("/navbar/github.png")} className="w-5 h-5" alt="GitHub" />
           </a>
           <a href="https://www.linkedin.com/in/%E5%AE%A5%E7%91%84-%E5%BB%96-18538a1b7/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-slate-900 transition hover:scale-110">
-            <img src="navbar/linkedin.png" className="w-5 h-5" alt="LinkedIn" />
+            <img src={withBasePath("/navbar/linkedin.png")} className="w-5 h-5" alt="LinkedIn" />
           </a>
           <LanguageSwitcher />
         </div>
@@ -51,11 +52,11 @@ export default function Navbar() {
           <Link href="/projects" onClick={() => setOpen(false)} className="rounded-lg px-2 py-1 hover:bg-sky-100 transition">{t.nav.projects}</Link>
           <div className="flex items-center justify-between pt-2">
             <div className="flex gap-3">
-              <a href="https://github.com/kayliao?tab=repositories" target="_blank" rel="noopener noreferrer">
-                <img src="navbar/github.png" className="w-5 h-5" alt="GitHub" />
+              <a href={withBasePath("https://github.com/kayliao?tab=repositories")} target="_blank" rel="noopener noreferrer">
+                <img src={withBasePath("/navbar/github.png")} className="w-5 h-5" alt="GitHub" />
               </a>
-              <a href="https://www.linkedin.com/in/%E5%AE%A5%E7%91%84-%E5%BB%96-18538a1b7/" target="_blank" rel="noopener noreferrer">
-                <img src="navbar/linkedin.png" className="w-5 h-5" alt="LinkedIn" />
+              <a href={withBasePath("https://www.linkedin.com/in/%E5%AE%A5%E7%91%84-%E5%BB%96-18538a1b7/")} target="_blank" rel="noopener noreferrer">
+                <img src={withBasePath("/navbar/linkedin.png")} className="w-5 h-5" alt="LinkedIn" />
               </a>
             </div>
             <LanguageSwitcher />
