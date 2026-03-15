@@ -1,8 +1,16 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+const nextConfig = {
+  output: "export",          // enable static export
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || "",
+  trailingSlash: true,       // optional: adds trailing slash to routes
+  images: {
+    unoptimized: true,       // prevents Next.js image optimization for static export
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || "",
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
